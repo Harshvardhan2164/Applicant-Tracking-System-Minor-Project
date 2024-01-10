@@ -1,2 +1,3 @@
-# Applicant-Tracking-System-Minor-Project
-Applicant Tracking System using Machine Learning and Natural Language Processing and deploying it on a Full Stack Web Interface to analyze the Resume Match Score of the Applicant.
+# Applicant Tracking System Minor Project
+
+Developing a NLP Model to analyze the Applicant's Resume for predicting the Match Score based on the Job description provided by the employer. 
