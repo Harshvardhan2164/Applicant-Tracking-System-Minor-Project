@@ -11,7 +11,7 @@ from pandas.plotting import scatter_matrix
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 
-resumeDataSet = pd.read_csv('../input/resume-dataset/UpdatedResumeDataSet.csv' ,encoding='utf-8')
+resumeDataSet = pd.read_csv('Resume_Dataset.csv' ,encoding='utf-8')
 resumeDataSet['cleaned_resume'] = ''
 resumeDataSet.head()
 
