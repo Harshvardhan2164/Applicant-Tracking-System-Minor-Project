@@ -1,0 +1,7 @@
+streamlit
+transformers
+torch
+pdfplumber
+nltk
+gensim
+scikit-learn
