@@ -17,6 +17,15 @@ def compare(resume_texts, JD_text, flag='HuggingFace-BERT'):
             return cos_scores
 
     # Add logic for other flags like 'Doc2Vec' if necessary
+    # if flag == 'Doc2Vec':
+        # if JD_text is not None:
+        #     JD_embeddings = get_doc2vec_embeddings(JD_text)
+        # for resume_text in resume_texts:
+        #     resume_embeddings.append(get_doc2vec_embeddings(resume_text))
+
+        # if JD_embeddings is not None and resume_embeddings is not None:
+        #     cos_scores = cosine(resume_embeddings, JD_embeddings)
+        #     return cos_scores
     else:
         # Handle other cases
         pass
