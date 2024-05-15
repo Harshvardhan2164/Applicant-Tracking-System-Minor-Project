@@ -20,47 +20,6 @@ def extract_text_data(file_path):
     return data
 
 def extract_keywords(resume_text, job_description):
-    # essential_keywords = {
-    #     'skills': ['tensorflow', 'keras', 'pytorch', 'machine learning', 'deep Learning', 'flask', 'streamlit', 'react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento', 'wordpress', 'javascript', 'angular js', 'c#', 'flask', 'android', 'android development', 'flutter', 'kotlin', 'xml', 'kivy', 'ios', 'ios development', 'swift', 'cocoa', 'cocoa touch', 'xcode', 'ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping', 'wireframes', 'storyframes', 'adobe photoshop', 'photoshop', 'editing', 'adobe illustrator', 'illustrator', 'adobe after effects', 'after effects', 'adobe premier pro', 'premier pro', 'adobe indesign', 'indesign', 'wireframe', 'solid', 'grasp', 'user research', 'user experience', 'Data Visualization', 'Predictive Analysis', 'Statistical Modeling',
-    #                                           'Data Mining', 'Clustering & Classification', 'Data Analytics',
-    #                                           'Quantitative Analysis', 'Web Scraping', 'ML Algorithms', 'Keras',
-    #                                           'Pytorch', 'Probability', 'Scikit-learn', 'Tensorflow', "Flask",
-    #                                           'Streamlit'],
-    #     'experience': ['software development', 'project management', 'team collaboration', 'problem-solving']
-    #     # Add more categories and keywords as needed
-    # }
-    
-    # # Split resume and job description text into words
-    # resume_words = set(resume_text.lower().split())
-    # job_desc_words = set(job_description.lower().split())
-    
-    # # Find missing essential keywords in resume compared to job description
-    # missing_keywords = {}
-    # for category, keywords in essential_keywords.items():
-    #     missing_keywords[category] = [keyword for keyword in keywords if keyword in job_desc_words and keyword not in resume_words]
-    
-    # return missing_keywords
-    # a = keywords(job_description, ratio=0.7)
-    # b = keywords(resume_text, ratio =0.7)
-    # c = []
-    # for i in a.split('\n'):
-    #     for j in i.split(' '):
-    #         c.append(j)
-    # d = []
-    # for i in b.split('\n'):
-    #     for j in i.split(' '):
-    #         d.append(j)
-            
-    # present = []
-    # absent = []
-    # for i in c:
-    #     if i in d:
-    #         present.append(i) 
-    #     else:
-    #         absent.append(i)
-    # st.write("Present words are: ", present)
-    # st.write("Missing words are: ", absent)
-    
     jd_keywords = keywords(job_description, ratio=0.7).split('\n')
     resume_keywords = keywords(resume_text, ratio=0.7).split('\n')
     
@@ -131,23 +90,12 @@ if(flag_1 == 'For You'):
             for i in range(len(score)):
                 my_dict[uploaded_files[i].name] = score[i]
             sorted_dict = dict(sorted(my_dict.items()))
-            # for i in sorted_dict.items():
-            #     with st.expander(str(i[0])):
-            #         st.write("Score is: ", i[1])
-            #         st.write("Missing Keywords:")
-            #         for keyword in missing_keywords[i]:
-            #             st.write(f"- {keyword}")
             for idx, (file_name, score_val) in enumerate(sorted_dict.items()):
                 with st.expander(str(file_name)):
                     st.write("Score is: ", score_val)
                     st.write("Missing Keywords:")
                     for keyword in missing_keywords[idx]:
                         st.write(f"- {keyword}")
-            # for i, file in enumerate(uploaded_files):
-            #     st.write(f"**{file.name}:**")
-                # for category, keywords in missing_keywords[i].items():
-                #     st.write(f"{category.capitalize()}: {', '.join(keywords)}")
-                # extract_keywords(uploaded_file_paths, JD)
 
 else:
     # Main content
